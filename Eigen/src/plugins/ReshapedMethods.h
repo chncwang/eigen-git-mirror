@@ -132,7 +132,7 @@ inline Reshaped<EIGEN_RESHAPED_METHOD_CONST Derived, SizeAtCompileTime, 1,
                 internal::get_compiletime_reshape_order<Flags,Order>::value>
 reshaped() EIGEN_RESHAPED_METHOD_CONST
 {
-  EIGEN_STATIC_ASSERT(Order==RowMajor || Order==ColMajor || Order==AutoOrder, INVALID_TEMPLATE_PARAMETER);
+  EIGEN_STATIC_ASSERT((Order==RowMajor || Order==ColMajor || Order==AutoOrder, INVALID_TEMPLATE_PARAMETER));
   return Reshaped<EIGEN_RESHAPED_METHOD_CONST Derived, SizeAtCompileTime, 1,
                   internal::get_compiletime_reshape_order<Flags,Order>::value>
                 (derived(), size(), 1);
